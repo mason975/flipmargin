@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Know your numbers before you buy. Free reseller profit calculator for online sellers and product flippers.">
+  <meta name="theme-color" content="#0b0f0e">
+  <title>FlipMargin — Know Your Profit Before You Buy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="FlipMargin home">
+      <span class="brand-mark">F<span>↗</span></span>
+      <span>flip<span class="brand-light">margin</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="header-cta" href="#calculator">Calculate profit <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="home">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> THE SMARTER WAY TO RESELL</div>
+        <h1>Know your profit<br>before you <span class="gradient-text">buy.</span></h1>
+        <p class="hero-description">Stop guessing what an item is worth. See your estimated profit, fees, and return on investment before you make your next flip.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#calculator">Try the free calculator <span>→</span></a>
+          <a class="text-link" href="#how-it-works">See how it works <span>↓</span></a>
+        </div>
+        <div class="hero-proof">
+          <div class="proof-avatars"><span>F</span><span>↗</span><span>$</span></div>
+          <p><strong>Built for everyday sellers.</strong><br><span>No account. No spreadsheet. No guesswork.</span></p>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Example profit summary">
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
+        <div class="floating-tag tag-top"><span class="tag-icon">↗</span> Smart buying starts here</div>
+        <div class="preview-card">
+          <div class="preview-top">
+            <div><span class="mini-label">YOUR ESTIMATED PROFIT</span><div class="preview-profit">$42.80</div></div>
+            <span class="positive-pill">+42.8%</span>
+          </div>
+          <div class="preview-chart">
+            <div class="chart-labels"><span>Costs</span><span>Profit</span></div>
+            <div class="chart-bar"><span class="bar-cost"></span><span class="bar-profit"></span></div>
+          </div>
+          <div class="preview-rows">
+            <div><span>Sale price</span><strong>$100.00</strong></div>
+            <div><span>Total costs</span><strong>$57.20</strong></div>
+            <div><span>Profit margin</span><strong class="green-text">42.8%</strong></div>
+          </div>
+          <div class="preview-footer"><span class="tiny-check">✓</span> Example calculation</div>
+        </div>
+        <div class="floating-tag tag-bottom"><span class="sparkle">✳</span> Make every flip count</div>
+      </div>
+    </section>
+
+    <section class="trust-strip section-wrap">
+      <div><span class="strip-icon">◎</span><span>Instant calculations</span></div>
+      <div><span class="strip-icon">⌁</span><span>Know every cost</span></div>
+      <div><span class="strip-icon">↗</span><span>Make smarter flips</span></div>
+      <div><span class="strip-icon">◇</span><span>Free to use</span></div>
+    </section>
+
+    <section class="calculator-section section-wrap" id="calculator">
+      <div class="section-heading">
+        <div class="eyebrow">THE FLIPMARGIN TOOLKIT</div>
+        <h2>Run the numbers.</h2>
+        <p>Enter your costs and sale price. We'll show you what you could actually keep.</p>
+      </div>
+
+      <div class="calculator-layout">
+        <div class="calculator-panel">
+          <div class="panel-heading">
+            <div><span class="panel-kicker">PROFIT CALCULATOR</span><h3>Item details</h3></div>
+            <button class="reset-button" id="resetButton" type="button">↺ Reset</button>
+          </div>
+
+          <div class="input-grid">
+            <label class="field">
+              <span>Purchase price <small>What you paid</small></span>
+              <div class="input-shell"><span class="currency">$</span><input id="purchasePrice" type="number" min="0" step="0.01" value="20" inputmode="decimal"></div>
+            </label>
+            <label class="field">
+              <span>Expected sale price <small>What buyer pays</small></span>
+              <div class="input-shell"><span class="currency">$</span><input id="salePrice" type="number" min="0" step="0.01" value="65" inputmode="decimal"></div>
+            </label>
+            <label class="field">
+              <span>Shipping cost <small>Your shipping expense</small></span>
+              <div class="input-shell"><span class="currency">$</span><input id="shippingCost" type="number" min="0" step="0.01" value="7" inputmode="decimal"></div>
+            </label>
+            <label class="field">
+              <span>Packaging cost <small>Boxes, tape, etc.</small></span>
+              <div class="input-shell"><span class="currency">$</span><input id="packagingCost" type="number" min="0" step="0.01" value="1.50" inputmode="decimal"></div>
+            </label>
+          </div>
+
+          <div class="form-divider"><span>SELLING FEES</span></div>
+          <div class="input-grid fee-grid">
+            <label class="field">
+              <span>Marketplace fee <small>Percentage of sale price</small></span>
+              <div class="input-shell"><input id="marketplaceFee" type="number" min="0" max="100" step="0.1" value="13.6" inputmode="decimal"><span class="suffix">%</span></div>
+            </label>
+            <label class="field">
+              <span>Fixed transaction fee <small>Flat fee per sale</small></span>
+              <div class="input-shell"><span class="currency">$</span><input id="fixedFee" type="number" min="0" step="0.01" value="0.40" inputmode="decimal"></div>
+            </label>
+            <label class="field">
+              <span>Promoted listing fee <small>Optional advertising fee</small></span>
+              <div class="input-shell"><input id="promotionFee" type="number" min="0" max="100" step="0.1" value="0" inputmode="decimal"><span class="suffix">%</span></div>
+            </label>
+            <label class="field">
+              <span>Other costs <small>Any additional expenses</small></span>
+              <div class="input-shell"><span class="currency">$</span><input id="otherCosts" type="number" min="0" step="0.01" value="0" inputmode="decimal"></div>
+            </label>
+          </div>
+          <p class="input-note"><span>ⓘ</span> Use the fee rates that apply to your selling platform and product category. Rates can vary.</p>
+        </div>
+
+        <aside class="results-panel" aria-live="polite">
+          <div class="results-top"><span class="panel-kicker">YOUR RESULTS</span><span class="live-indicator"><i></i> LIVE</span></div>
+          <div class="result-main">
+            <span class="result-label">Estimated net profit</span>
+            <div class="result-value" id="netProfit">$27.26</div>
+            <span class="result-subtitle" id="resultMessage">That's what you keep after estimated costs.</span>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric"><span>Profit margin</span><strong id="profitMargin">41.9%</strong></div>
+            <div class="metric"><span>Return on investment</span><strong id="roi">136.3%</strong></div>
+          </div>
+          <div class="breakdown">
+            <div class="breakdown-heading"><strong>Cost breakdown</strong><span>USD</span></div>
+            <div class="breakdown-row"><span>Purchase price</span><strong id="outPurchase">$20.00</strong></div>
+            <div class="breakdown-row"><span>Shipping</span><strong id="outShipping">$7.00</strong></div>
+            <div class="breakdown-row"><span>Packaging</span><strong id="outPackaging">$1.50</strong></div>
+            <div class="breakdown-row"><span>Marketplace fee</span><strong id="outMarketplace">$8.84</strong></div>
+            <div class="breakdown-row"><span>Fixed fee</span><strong id="outFixed">$0.40</strong></div>
+            <div class="breakdown-row"><span>Promotion fee</span><strong id="outPromotion">$0.00</strong></div>
+            <div class="breakdown-row"><span>Other costs</span><strong id="outOther">$0.00</strong></div>
+            <div class="breakdown-total"><span>Total costs</span><strong id="totalCosts">$37.74</strong></div>
+          </div>
+          <div class="result-tip" id="resultTip"><span>✦</span><p><strong>Looking good.</strong> This estimate shows a positive return. Remember to account for taxes and any costs not entered above.</p></div>
+        </aside>
+      </div>
+      <p class="disclaimer">FlipMargin provides estimates for planning purposes only. Actual marketplace fees, payment processing, shipping charges, taxes, refunds, and other costs may differ. Always verify current fees with your selling platform. This tool is not financial or tax advice.</p>
+    </section>
+
+    <section class="how-section section-wrap" id="how-it-works">
+      <div class="section-heading">
+        <div class="eyebrow">SIMPLE BY DESIGN</div>
+        <h2>Three steps to a smarter flip.</h2>
+        <p>A clearer picture before you spend your money.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card"><div class="step-number">01</div><div class="step-icon">⌁</div><h3>Enter your costs</h3><p>Add what you paid, expected sale price, shipping, packaging, and selling fees.</p></article>
+        <article class="step-card"><div class="step-number">02</div><div class="step-icon">∑</div><h3>See the breakdown</h3><p>FlipMargin estimates your expenses and calculates the money left after costs.</p></article>
+        <article class="step-card"><div class="step-number">03</div><div class="step-icon">↗</div><h3>Make your move</h3><p>Use your estimated margin and ROI to compare opportunities before buying.</p></article>
+      </div>
+    </section>
+
+    <section class="about-section section-wrap" id="about">
+      <div class="about-card">
+        <div class="about-symbol">F<span>↗</span></div>
+        <div><div class="eyebrow">BUILT FOR THE NEXT GOOD FLIP</div><h2>Less guessing.<br><span class="gradient-text">More knowing.</span></h2></div>
+        <p>FlipMargin is a simple toolkit for people buying and reselling products. Our goal is to make the numbers easier to understand, so you can make more informed decisions.</p>
+        <a href="#calculator" class="button button-primary">Run your numbers <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-wrap">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">F<span>↗</span></span><span>flip<span class="brand-light">margin</span></span></a>
+    <p>Know your numbers. Make your move.</p>
+    <span class="copyright">© <span id="year"></span> FlipMargin. Independent project.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

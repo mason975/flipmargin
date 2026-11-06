@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flipmargin.mason-5d3.workers.dev/sitemap.xml
